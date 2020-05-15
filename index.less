@@ -1,0 +1,75 @@
+@import url(./common.less);
+*{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#app{
+	width: 60vw;
+	height: 70vh;
+	.grid(true,5,1,1fr,1fr);
+	border: 3px solid silver;
+	overflow: hidden;
+	//头部的边框整合
+	.goods:first-of-type{
+		border-bottom: 3px solid silver;
+	}
+	.goods:first-of-type >.item{
+		border-right: 3px solid silver;
+
+	}
+	//鼠标移动触发
+	.goods:first-of-type >.item:hover{
+		background-color: thistle;
+
+	}
+	.goods:first-of-type .item:last-child{
+		border-right: none;
+	}
+
+	//绘制头部样式
+	.goods{
+		.grid(false,1,5,1fr 2fr 3fr 3fr 2fr,100%);
+		.item{
+				#padding(10px,0px,0);
+				.fontStyle(18px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				input[type='checkbox']{
+					transform: scale(1.5);
+				}
+				span{
+					display: inline-block;
+					width: 80px;
+					overflow: hidden;
+					background-color:rosybrown;
+					.fontStyle(28px);
+					color: snow;
+					height: 30px;
+				}
+				button{
+					width: 40px;
+					height: 30px;
+				}
+				
+		}
+		//购物车底部footer设置
+		&:last-child{
+			border-top: 3px solid silver;
+		}
+	}
+	.list {
+		font-size: 10px;
+	}
+	.list li {
+		float: left;
+		
+	}
+}

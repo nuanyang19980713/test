@@ -1,0 +1,26 @@
+/*row准备把行分成多少分，col准备把列分成多少分,span每份多少*/
+.grid(@is_repate:true,@row:1,@col:1,@spanc,@spanr) when(@is_repate = true){
+	display: grid;
+	grid-template-rows: repeat(@row,@spanr);
+	grid-template-columns: repeat(@col,@spanc);
+	box-sizing: border-box;
+}
+.grid(@is_repate:false,@row:1,@col:1,@spanc,@spanr) when(@is_repate = false){
+	display: grid;
+	grid-template-rows: @spanr;
+	grid-template-columns: @spanc;
+	box-sizing: border-box;
+}
+.fontStyle(@h:18px){
+    font-size: 16px;
+    font-weight: 700;
+    font-family: '楷体';
+    font-style: italic;
+    text-align: center;
+    line-height: @h;
+}
+#padding(@padding,@margin,@border){
+    padding:@padding;
+    margin: @margin;
+    border: @border;
+}

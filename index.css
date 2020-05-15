@@ -1,0 +1,84 @@
+/*row准备把行分成多少分，col准备把列分成多少分,span每份多少*/
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app {
+  width: 60vw;
+  height: 70vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  box-sizing: border-box;
+  border: 3px solid silver;
+  overflow: hidden;
+}
+#app .goods:first-of-type {
+  border-bottom: 3px solid silver;
+}
+#app .goods:first-of-type > .item {
+  border-right: 3px solid silver;
+}
+#app .goods:first-of-type > .item:hover {
+  background-color: thistle;
+}
+#app .goods:first-of-type .item:last-child {
+  border-right: none;
+}
+#app .goods {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 1fr 2fr 3fr 3fr 2fr;
+  box-sizing: border-box;
+}
+#app .goods .item {
+  padding: 10px;
+  margin: 0px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: '楷体';
+  font-style: italic;
+  text-align: center;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .goods .item input[type='checkbox'] {
+  transform: scale(1.5);
+}
+#app .goods .item span {
+  display: inline-block;
+  width: 80px;
+  overflow: hidden;
+  background-color: rosybrown;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: '楷体';
+  font-style: italic;
+  text-align: center;
+  line-height: 28px;
+  color: snow;
+  height: 30px;
+}
+#app .goods .item button {
+  width: 40px;
+  height: 30px;
+}
+#app .goods:last-child {
+  border-top: 3px solid silver;
+}
+#app .list {
+  font-size: 10px;
+}
+#app .list li {
+  float: left;
+}
